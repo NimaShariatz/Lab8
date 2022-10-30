@@ -51,9 +51,23 @@ public class CustomListTest {
         list=MockCityList();
         list.addCity(new City("Moscow","Moscow Oblast"));
         int ItemCount = list.getCount();
-        list.deleteCity();
+        list.deleteCity(0);
         assertEquals(list.getCount(), ItemCount - 1);
     }//deleteCityTest
+
+
+    @Test
+    public void countCitiesTest(){
+        list=MockCityList();
+        assertEquals(0,list.getCount());
+        list.addCity(new City("Moscow","Moscow Oblast"));
+        list.addCity(new City("Leningrad","Leningrad Oblast"));
+        assertEquals(2,list.getCount());
+        list.deleteCity(1);
+        assertEquals(1,list.getCount());
+        list.deleteCity(0);
+        assertEquals(1,list.getCount());
+    }//countCitiesTest
 
 
 }
