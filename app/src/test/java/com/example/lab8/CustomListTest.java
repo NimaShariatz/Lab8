@@ -38,6 +38,10 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
     }//addCityTest
 
+
+    /**
+     * add city to list, hasCity() will check if its empty. the assert checks if outcome is what is desired.
+     */
     @Test
     public void hasCityTest(){
         list=MockCityList();
@@ -46,6 +50,9 @@ public class CustomListTest {
 
     }//hasCityTest
 
+    /**
+     * add city to list, delete it, then check if count is 0
+     */
     @Test
     public void deleteCityTest(){
         list=MockCityList();
@@ -55,6 +62,11 @@ public class CustomListTest {
         assertEquals(list.getCount(), ItemCount - 1);
     }//deleteCityTest
 
+
+    /**
+     * add 2 entries to list. check if 2 are added. delete then check count. delete then check count by assert.
+     *
+     */
 
     @Test
     public void countCitiesTest(){
@@ -66,7 +78,7 @@ public class CustomListTest {
         list.deleteCity(1);
         assertEquals(1,list.getCount());
         list.deleteCity(0);
-        assertEquals(1,list.getCount());
+        assertEquals(0,list.getCount());
     }//countCitiesTest
 
 
